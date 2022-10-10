@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialised;
+}
+
+:root {
+    font-size: 18px;
+    line-height: 1.5;
+    --time: all 0.3s ease-out;
+    font-family: Montserrat, sans-serif;
+}
+
+@media (max-width: 600px) {
+    :root {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 420px) {
+    :root {
+        font-size: 12px;
+    }
+}
+
+.nobr {
+    white-space: nowrap;
+}
+
+header {
+    height: 100vh;
+    background-image: url(media/rome.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 100px;
+    background-image: url(media/wreath-128.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    padding-top: 160px;
+    margin-bottom: 5rem;
+}
+
+h1>span:first-child {
+    display: block;
+    font-weight: 100;
+    
+}
+
+h1>span:last-child {
+    display: block;
+    font-weight: 600;
+    line-height: 0.8;
+}
+
+@media (max-width: 1400px) {
+    h1 {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        transform: scale(0.6);
+    }
+}
+
+@media (max-width: 320px) {
+    h1 {
+        transform: scale(0.4);
+    }
+}
+
+#btn {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: 1.3px;
+    border: 1px solid #fff;
+    padding: 28px 42px;
+    background-color: rgba(0,0,0,0.3);
+    transition: var(--time);
+}
+
+#btn:hover {
+    transform: scale(1.1);
+}
+
+#ham {
+    width: 60px;
+    height: 45px;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    transform: scale(0.8);
+    cursor: pointer;
+}
+
+#ham>span {
+    display: block;
+    width: 100%;
+    height: 9px;
+    background-color: #fff;
+    border-radius: 9px;
+    position: absolute;
+    transition: var(--time);
+}
+
+#ham>span:nth-child(1) {
+    top: 0;
+}
+
+#ham>span:nth-child(2),
+#ham>span:nth-child(3) {
+    top: 18px;
+}
+
+#ham>span:nth-child(4) {
+    top: 36px;
+}
+
+/* opened version of hamburger */
+
+#ham.open>span:nth-child(1),
+#ham.open>span:nth-child(4) {
+    top: 18px;
+    opacity: 0;
+}
+
+#ham.open>span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+#ham.open>span:nth-child(3) {
+    transform: rotate(-45deg);
+}
