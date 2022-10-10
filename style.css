@@ -164,4 +164,30 @@ h1>span:last-child {
     height: 100vh;
     background-color: rgba(0,0,0,0.7);
     transition: var(--time);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#nav>ul {
+    text-align: center;
+    list-style-type: none;
+    background-image: url(media/wreath-32.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    padding-top: 4rem;
+}
+
+#nav a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 1.4rem;
+    display: block;
+    margin-bottom: 1.2rem;
+    transition: var(--time);
+}
+
+nav a:hover {
+    transform: scale(1.2);
 }
