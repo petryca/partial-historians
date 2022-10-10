@@ -32,13 +32,49 @@
 
 header {
     height: 100vh;
-    background-image: url(media/rome.jpg);
-    background-size: cover;
-    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    position: sticky;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(media/rome.jpg);
+    background-size: cover;
+    background-position: center;
+    animation-name: party;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes party {
+    0% {
+        transform-origin: 50%;
+        transform: scale3d(1, 1, 1);
+    }
+    50% {
+        transform-origin: 10%;
+        transform: scale3d(1.1, 1.1, 1);
+    }
+    75% {
+        transform-origin: 90%;
+        transform: scale3d(1.2, 1.2, 1);
+    }
+    100% {
+        transform-origin: 20%;
+        transform: scale3d(1.3, 1.3, 1);
+    }
 }
 
 h1 {
@@ -53,6 +89,8 @@ h1 {
     padding-top: 160px;
     margin-bottom: 5rem;
     transition: var(--time);
+    position: relative;
+    z-index: 5;
 }
 
 h1>span:first-child {
@@ -97,6 +135,7 @@ h1>span:last-child {
     padding: 28px 42px;
     background-color: rgba(0,0,0,0.3);
     transition: var(--time);
+    z-index: 5;
 }
 
 #btn:hover {
@@ -190,4 +229,29 @@ h1>span:last-child {
 
 nav a:hover {
     transform: scale(1.2);
+}
+
+main {
+    background-color: #1a1a1a;
+    color: #ccc;
+    padding: 0 2rem;
+    overflow: auto;
+    text-align: center;
+    position: relative;
+}
+
+section {
+    margin: 6rem 0;
+}
+
+#intro>img {
+    display: inline-block;
+    width: 180px;
+    border-radius: 50%;
+    margin-bottom: 3rem;
+}
+
+#intro>p {
+    font-size: 1.2rem;
+    line-height: 1.4;
 }
