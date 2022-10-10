@@ -52,6 +52,7 @@ h1 {
     background-position: center top;
     padding-top: 160px;
     margin-bottom: 5rem;
+    transition: var(--time);
 }
 
 h1>span:first-child {
@@ -149,4 +150,18 @@ h1>span:last-child {
 
 #ham.open>span:nth-child(3) {
     transform: rotate(-45deg);
+}
+
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#nav {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.7);
+    transition: var(--time);
 }
