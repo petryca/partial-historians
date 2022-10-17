@@ -12,6 +12,7 @@
     line-height: 1.5;
     --time: all 0.3s ease-out;
     font-family: Montserrat, sans-serif;
+    scroll-behavior: smooth;
 }
 
 @media (max-width: 600px) {
@@ -108,6 +109,23 @@ h1>span:last-child {
     display: block;
     font-weight: 600;
     line-height: 0.8;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+    letter-spacing: 1.3px;
+    font-weight: 600;
+    background-image: url(media/wreath-32.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    padding-top: 4rem;
+}
+
+section>p {
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 @media (max-width: 1400px) {
@@ -270,9 +288,41 @@ section {
     gap: 10px;
 }
 
+#grid>div {
+    transform: translate(0, 8rem);
+    opacity: 0;
+}
+
+#grid>div:nth-child(odd) {
+    transition: transform 0.5s, opacity 1.5s;
+}
+
+#grid>div:nth-child(even) {
+    transition: transform 1s, opacity 2.5s;
+}
+
+#grid>div.inviewport {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
 /* elemets with text colors */
-#grid>div:nth-child(2) {
+#grid>div:nth-child(2), 
+#grid>div:nth-child(15) {
     background-image: linear-gradient(135deg, #4d7c7b 0%, #083a38 100%);
+}
+
+#grid>div:nth-child(4), 
+#grid>div:nth-child(11) {
+    background-image: linear-gradient(135deg, #a90329 0%, #6d0019 100%);
+}
+
+#grid>div:nth-child(7) {
+    background-image: linear-gradient(135deg, #4366ad 0%, #233e77 100%);
+}
+
+#grid>div:nth-child(8) {
+    background-image: linear-gradient(135deg, #c9ac30 0%, #600202 100%);
 }
 
 #grid p {
@@ -292,4 +342,14 @@ section {
 #grid>div:nth-child(5) {
     grid-row: 2 / 4;
     grid-column: 2 / 4;
+}
+
+#grid>div:nth-child(10) {
+    grid-row: 4 / 6;
+    grid-column: 2 / 3;
+}
+
+audio {
+    display: block;
+    margin: 4rem auto 0 auto;
 }
